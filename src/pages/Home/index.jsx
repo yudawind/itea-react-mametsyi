@@ -1,39 +1,38 @@
-import { CardFilm } from "../../components/CardFilm"
 import { Header } from "../../layouts/Header"
+import { FilmsList } from "../../features/FilmsList"
 import { FILMS } from "../../const"
+import styled from "styled-components";
+
+const StContainer = styled.div`
+    color: #141414;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1370px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    h1 {
+        padding: 15px 0 0;
+    }
+`
 
 export const Home = () => {
 
     return (
         <>
-            <Header />
+    <Header />
+
+<StContainer>
 
             <h1>Home</h1>
 
-            <div style={{display: 'flex',gap: '30px'}}>
-
-                    <div style={{width: '320px'}}>
-                        <h2>Комедії</h2>
-
-                    {FILMS[0].map((film) => 
-                            
-                            <CardFilm 
-                            film={film} />
-                            
-                        )}
-                    </div>
-
-                    <div style={{width: '320px'}}>
-                        <h2>Україньськи фільми</h2>
-
-                    {FILMS[1].map((film) => 
-                            
-                            <CardFilm 
-                            film={film} />
-                            
-                        )}
-                    </div>
+            <div className="row">
+                    
+            <FilmsList films={FILMS[0]} cat="Комедії"/>
+                    
+            <FilmsList films={FILMS[1]} cat="Українське"/>
             </div>
+</StContainer>
+            
         </>
         
     )

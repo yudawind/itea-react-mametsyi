@@ -1,0 +1,31 @@
+@import "mixin";
+@import "vars";
+
+:root {
+    font-family: 'open sans', Arial, Helvetica, sans-serif;
+    color: var(--cText);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+}
+
+.row-wrap {
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 1370px;
+    margin: 0 auto;
+    padding: 0 15px 30px;
+}

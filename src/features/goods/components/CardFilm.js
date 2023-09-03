@@ -1,3 +1,6 @@
+import { Button } from "../../../components/Button/Button"
+import "../styles/index.scss"
+
 export const CardFilm = ({film}) => {
     return (
         <div className="card">
@@ -6,7 +9,7 @@ export const CardFilm = ({film}) => {
                 <h3>{film.title}</h3>
                 <p>{film.overview}</p>
             </div>
-        
+            <Button />
         </div>
     )
 }
