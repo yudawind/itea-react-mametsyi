@@ -12,7 +12,7 @@ export const FilmsList = ({films,cat}) => {
                 <StyledH2>{cat}</StyledH2>
                 <div className="row row-wrap">
                     {films.map((film) => 
-                    <CardFilm film={film} />
+                    <CardFilm film={film} key={film.id}/>
                 )}
                 </div>
                 

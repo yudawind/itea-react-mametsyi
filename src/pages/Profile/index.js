@@ -14,6 +14,8 @@ const ProfileCard = styled.header`
     }
 `
 
+const filmsUlublene = FILMS.filter(film => film.genre === 'Комедія')
+
 export const Profile = () => {
     return (
         <>
@@ -30,7 +32,7 @@ export const Profile = () => {
 
     
                     
-            <FilmsList films={FILMS[1]} cat="Улюблене"/>
+            <FilmsList films={filmsUlublene} cat="Улюблене"/>
 
         </div>
         </>

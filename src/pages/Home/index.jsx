@@ -15,6 +15,10 @@ const StContainer = styled.div`
     }
 `
 
+const filmsKomedy = FILMS.filter(film => film.genre === 'Комедія')
+const filmsUkraine = FILMS.filter(film => film.genre === 'Українське')
+
+
 export const Home = () => {
 
     return (
@@ -27,9 +31,9 @@ export const Home = () => {
 
             <div className="row">
                     
-            <FilmsList films={FILMS[0]} cat="Комедії"/>
+            <FilmsList films={filmsKomedy} cat="Комедії"/>
                     
-            <FilmsList films={FILMS[1]} cat="Українське"/>
+            <FilmsList films={filmsUkraine} cat="Українське"/>
             </div>
 </StContainer>
             

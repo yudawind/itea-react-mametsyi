@@ -1,3 +1,4 @@
+
 .card {
     position: relative;
     max-width: 320px;
@@ -39,3 +40,37 @@
         z-index: 2;
     }
 }
+
+.modal {
+    /* Інші стилі модального вікна */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Півпрозорий фон */
+    z-index: 9000; /* Висока глибина стеку */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .modal-content {
+        position: absolute;
+        max-width: 600px;
+        margin-right: 600px;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: white;
+        z-index: 9010;
+    }
+    .modal-overlay {
+        position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9005;
+    }
+  }
+  
