@@ -1,7 +1,6 @@
-
 import s from "./index.module.scss"
 
-export const Button = ({inner , onClick}) => {
+export const Button = ({children , onClick}) => {
     return (
     <>
         <button 
@@ -10,7 +9,7 @@ export const Button = ({inner , onClick}) => {
             name="button"
             onClick={onClick}>
             
-                {inner}
+                {children}
         </button>
     </>
     )

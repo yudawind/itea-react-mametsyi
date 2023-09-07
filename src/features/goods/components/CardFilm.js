@@ -5,19 +5,32 @@ import React, { useState } from 'react';
 
 export const CardFilm = ({film}) => {
 
-const [isModalOpen, setIsModalOpen] = useState(false);
-
-const openModal = () => {
-    setIsModalOpen(true);
-    console.log('модалка true')
-  }
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [rating, setRating] = useState(null);
+    const [showRatingInput, setShowRatingInput] = useState(true);
+    
+    const openModal = () => {
+      setIsModalOpen(true);
+      console.log("модалка true");
+    };
   
-  const closeModal = () => {
-    setIsModalOpen(false);
-    console.log('модалка false')
-  }
+    const closeModal = () => {
+      setIsModalOpen(false);
+      console.log("модалка false");
+    };
+  
+    const handleRatingChange = (e) => {
+      const newRating = parseFloat(e.target.value);
+      setRating(newRating);
+    };
+  
+    const handleSetRating = () => {
+        setShowRatingInput(false); 
+      setRating(rating);
+    };
 
-    return (
+
+return (
         <>
             <div className="card" id={film.id}>
                 <img src={film.poster_path} onClick={openModal} alt="poster" />
@@ -25,7 +38,7 @@ const openModal = () => {
                     <h3>{film.title}</h3>
                     <p>{film.overview}</p>
                 </div>
-                <Button inner='подробиці' onClick={openModal} />
+                <Button onClick={openModal}>подробиці</Button>
             </div>
 
             {isModalOpen && (
@@ -37,11 +50,28 @@ const openModal = () => {
                             <h3>{film.title}</h3>
                             <p>Рік {film.year}</p>
                             <p>{film.overview}</p>
-                            <p>Рейтинг {film.rate}</p>
-                            <Button  inner='закрити' onClick={closeModal} />
+                            <p>Рейтинг {film.rate} из 10 {!showRatingInput ? ('(Моя оцінка ' + rating + ')') : ''}</p>
+                            {showRatingInput && (
+                <p>
+                  <input
+                    id=""
+                    type="number"
+                    min="0"
+                    max="10"
+                    step="1"
+                    value={rating || ""}
+                    onChange={handleRatingChange}
+                  />&nbsp;
+                  <Button onClick={handleSetRating}>оцінити</Button>
+                </p>
+              )}
+                            
+                            <Button onClick={closeModal}>закрити</Button>
                         </div>
+
                     </div>
                     <div className="modal-overlay" onClick={closeModal}></div>
+                    
                 </div>
             )}
 
