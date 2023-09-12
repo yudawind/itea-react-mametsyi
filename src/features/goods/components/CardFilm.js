@@ -11,12 +11,10 @@ export const CardFilm = ({film}) => {
     
     const openModal = () => {
       setIsModalOpen(true);
-      console.log("модалка true");
     };
   
     const closeModal = () => {
       setIsModalOpen(false);
-      console.log("модалка false");
     };
   
     const handleRatingChange = (e) => {
@@ -52,19 +50,19 @@ return (
                             <p>{film.overview}</p>
                             <p>Рейтинг {film.rate} из 10 {!showRatingInput ? ('(Моя оцінка ' + rating + ')') : ''}</p>
                             {showRatingInput && (
-                <p>
-                  <input
-                    id=""
-                    type="number"
-                    min="0"
-                    max="10"
-                    step="1"
-                    value={rating || ""}
-                    onChange={handleRatingChange}
-                  />&nbsp;
-                  <Button onClick={handleSetRating}>оцінити</Button>
-                </p>
-              )}
+                              <p>   
+                                <input
+                                  id=""
+                                  type="number"
+                                  min="0"
+                                  max="10"
+                                  step="1"
+                                  value={rating || ""}
+                                  onChange={handleRatingChange}
+                                />&nbsp;
+                                <Button onClick={handleSetRating}>оцінити</Button>
+                              </p>
+                            )}
                             
                             <Button onClick={closeModal}>закрити</Button>
                         </div>
