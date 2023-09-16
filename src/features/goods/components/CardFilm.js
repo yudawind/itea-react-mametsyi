@@ -1,6 +1,6 @@
 import { Button } from "../../../components/Button/Button"
 import "../styles/index.scss"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 export const CardFilm = ({film}) => {
@@ -27,6 +27,9 @@ export const CardFilm = ({film}) => {
       setRating(rating);
     };
 
+    useEffect(() => {
+      document.title = `рейтинг фільму ${rating}`;
+    },[rating])
 
 return (
         <>
