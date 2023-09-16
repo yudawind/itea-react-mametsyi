@@ -1,5 +1,5 @@
 import { Button } from "../../components/Button/Button";
-import useCookieConsent from "../../features/useCookieConsent";
+import useCookieConsent from "../../hooks/useCookieConsent";
 import styled from "styled-components";
 
 const StyleCookie = styled.div`
