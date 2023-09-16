@@ -2,6 +2,7 @@ import { Header } from "../../layouts/Header"
 import { FilmsList } from "../../features/FilmsList"
 import { FILMS } from "../../const"
 import styled from "styled-components";
+import { CookieMessage } from "../../layouts/Footer/CookieMessage";
 
 const StContainer = styled.div`
     color: #141414;
@@ -23,20 +24,21 @@ export const Home = () => {
 
     return (
         <>
-    <Header />
+            <Header />
 
-<StContainer>
+            <StContainer>
 
-            <h1>Home</h1>
+                        <h1>Home</h1>
 
-            <div className="row">
-                    
-            <FilmsList films={filmsKomedy} cat="Комедії"/>
-                    
-            <FilmsList films={filmsUkraine} cat="Українське"/>
-            </div>
-</StContainer>
-            
+                        <div className="row">
+                                
+                        <FilmsList films={filmsKomedy} cat="Комедії"/>
+                                
+                        <FilmsList films={filmsUkraine} cat="Українське"/>
+                        </div>
+            </StContainer>
+
+            <CookieMessage />
         </>
         
     )
