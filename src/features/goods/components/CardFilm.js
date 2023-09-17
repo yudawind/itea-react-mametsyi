@@ -3,7 +3,9 @@ import "../styles/index.scss"
 import React, { useEffect, useState } from 'react';
 
 
-export const CardFilm = ({film}) => {
+export const CardFilm = ({film, onLikeClick, isLiked }) => {
+
+  console.log(film);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [rating, setRating] = useState(null);
@@ -27,6 +29,10 @@ export const CardFilm = ({film}) => {
       setRating(rating);
     };
 
+    const handleLike = () => {
+      onLikeClick(film.id);
+    };
+
     useEffect(() => {
       document.title = `рейтинг фільму ${rating}`;
     },[rating])
@@ -34,11 +40,16 @@ export const CardFilm = ({film}) => {
 return (
         <>
             <div className="card" id={film.id}>
-                <img src={film.primaryImage.url} onClick={openModal} alt="poster" />
+                <img src={
+                  film.primaryImage
+                  ? film.primaryImage.url
+                  : "https://picsum.photos/720"
+                  } onClick={openModal} alt="poster" />
                 <div className="card-body">
                     <h3>{film.titleText.text}</h3>
-                    <p>{film.overview}</p>
+                    {/* <p>{film.overview}</p> */}
                 </div>
+                <Button onClick={handleLike}>{isLiked ? 'Видалити вподобайку' : 'Вподобати'}</Button> 
                 <Button onClick={openModal}>подробиці</Button>
             </div>
 
@@ -46,12 +57,16 @@ return (
                 <div className="modal" >
 
                     <div className="modal-content">
-                        <img src={film.primaryImage.url} alt="poster" />
+                        <img src={
+                          film.primaryImage 
+                          ? film.primaryImage.url
+                          : "https://picsum.photos/720"
+                          } alt="poster" />
                         <div className="modal-body">
                             <h3>{film.title}</h3>
-                            <p>Рік {film.year}</p>
-                            <p>{film.overview}</p>
-                            <p>Рейтинг {film.rate} из 10 {!showRatingInput ? ('(Моя оцінка ' + rating + ')') : ''}</p>
+                            <p>Рік {film.releaseYear.year}</p>
+                            <p>{film.primaryImage.caption.plainText}</p>
+                            <p>Рейтинг 7 из 10 {!showRatingInput ? ('(Моя оцінка ' + rating + ')') : ''}</p>
                             {showRatingInput && (
                               <p>   
                                 <input

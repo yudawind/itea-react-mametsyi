@@ -1,8 +1,7 @@
 import { Header } from "../../layouts/Header";
 import styled from "styled-components";
-import { FILMS } from "../../const"
-import { FilmsList } from "../../features/FilmsList";
 import { CookieMessage } from "../../layouts/Footer/CookieMessage";
+import { Video } from "../../features/videos/Video";
 
 const ProfileCard = styled.header`
     
@@ -14,8 +13,6 @@ const ProfileCard = styled.header`
         font-size: 20px;
     }
 `
-
-const filmsUlublene = FILMS.filter(film => film.genre === 'Комедія')
 
 export const Profile = () => {
 
@@ -32,10 +29,8 @@ export const Profile = () => {
                 <p>Професійний ІТ-спеціаліст та програміст</p>
                 </ProfileCard>
 
+                <Video />
         
-                        
-                <FilmsList films={filmsUlublene} cat="Улюблене"/>
-
             </div>
 
             <CookieMessage />
