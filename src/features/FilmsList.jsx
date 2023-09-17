@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { CardFilm } from "./goods/components/CardFilm";
+import { useSelectedFilmIds } from "./videos/components/SelectedFilmsProvider ";
 
 const StyledH2 = styled.h2`
     color: #141414;
@@ -7,12 +8,26 @@ const StyledH2 = styled.h2`
 `
 
 export const FilmsList = ({films,cat}) => {
+    const { selectedFilmIds, addSelectedFilmId, removeSelectedFilmId } = useSelectedFilmIds();
+
+    const handleLikeClick = (filmId) => {
+        if (selectedFilmIds.includes(filmId)) {
+            
+            removeSelectedFilmId(filmId);
+          } else {
+            addSelectedFilmId(filmId);
+          }
+      };
+
     return (
         <div className="col">
                 <StyledH2>{cat}</StyledH2>
                 <div className="row row-wrap">
                     {films.map((film) => 
-                    <CardFilm film={film} key={film.id}/>
+                    <div key={film.id}>
+                        <CardFilm film={film} onLikeClick={handleLikeClick} />
+                        {/* <Button onClick={() => handleLikeClick(film)}>Лайк</Button> */}
+                    </div>
                 )}
                 </div>
                 
