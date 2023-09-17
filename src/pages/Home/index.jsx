@@ -3,6 +3,7 @@ import { FilmsList } from "../../features/FilmsList"
 import { FILMS } from "../../const"
 import styled from "styled-components";
 import { CookieMessage } from "../../layouts/Footer/CookieMessage";
+import { Videos } from "../../features/videos/Videos";
 
 const StContainer = styled.div`
     color: #141414;
@@ -26,15 +27,16 @@ export const Home = () => {
         <>
             <Header />
 
+            
+
             <StContainer>
 
                         <h1>Home</h1>
 
                         <div className="row">
                                 
-                        <FilmsList films={filmsKomedy} cat="Комедії"/>
-                                
-                        <FilmsList films={filmsUkraine} cat="Українське"/>
+                        <Videos />
+                        
                         </div>
             </StContainer>
 

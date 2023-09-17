@@ -34,9 +34,9 @@ export const CardFilm = ({film}) => {
 return (
         <>
             <div className="card" id={film.id}>
-                <img src={film.poster_path} onClick={openModal} alt="poster" />
+                <img src={film.primaryImage.url} onClick={openModal} alt="poster" />
                 <div className="card-body">
-                    <h3>{film.title}</h3>
+                    <h3>{film.titleText.text}</h3>
                     <p>{film.overview}</p>
                 </div>
                 <Button onClick={openModal}>подробиці</Button>
@@ -46,7 +46,7 @@ return (
                 <div className="modal" >
 
                     <div className="modal-content">
-                        <img src={film.poster_path} alt="poster" />
+                        <img src={film.primaryImage.url} alt="poster" />
                         <div className="modal-body">
                             <h3>{film.title}</h3>
                             <p>Рік {film.year}</p>
