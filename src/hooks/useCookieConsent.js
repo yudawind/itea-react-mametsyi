@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function useCookieConsent() {
   const [consentGiven, setConsentGiven] = useState(false);
 
   useEffect(() => {
-    const consentStatus = localStorage.getItem('consentGiven');
-    if (consentStatus === 'true') {
+    const consentStatus = localStorage.getItem("consentGiven");
+    if (consentStatus === "true") {
       setConsentGiven(true);
     }
   }, []);
-  
+
   const giveConsent = () => {
     setConsentGiven(true);
-    localStorage.setItem('consentGiven', 'true');
+    localStorage.setItem("consentGiven", "true");
   };
 
   return {
