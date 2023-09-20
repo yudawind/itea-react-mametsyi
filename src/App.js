@@ -4,7 +4,7 @@ import { Home } from "./pages/Home";
 import { Profile } from "./pages/Profile";
 import { Error } from "./pages/Error";
 import "./styles/index.scss";
-import { SelectedFilmIdsProvider } from "./features/films/components/SelectedFilmIdsProvider";
+import { SelectedFilmIdsProvider } from "./features/videos/components/SelectedFilmIdsProvider";
 
 export const App = () => {
   const { home, profile } = ROUTES;
