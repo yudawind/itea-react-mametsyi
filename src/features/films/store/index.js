@@ -35,7 +35,25 @@ const videoSlice = createSlice({
     setFetching(state) {
       state.fetching = true;
     },
+    setCompleted(state, action) {
+      state.videos = action.payload;
+      state.fetching = false;
+    },
+    setName(state) {
+      state.videos[0].titleType.plainText = "Itea";
+      state.videos[0].titleText.text = "Course";
+    },
+    setFailed(state, action) {
+      state.message = action.payload;
+      state.fetching = false;
+    },
+    reset(state) {
+      state = initialState;
+    },
   },
 });
 
-export default videoSlice;
+export const { setFetching, setCompleted, setName, setFailed, reset } =
+  videoSlice.actions;
+
+export default videoSlice.reducer;

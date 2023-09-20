@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 export const CardFilm = ({ film, onLikeClick, isLiked }) => {
   // console.log(film);
-
+  // console.log(film.primaryImage.url);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [rating, setRating] = useState(null);
   const [showRatingInput, setShowRatingInput] = useState(true);
@@ -40,11 +40,14 @@ export const CardFilm = ({ film, onLikeClick, isLiked }) => {
       <div className="card" id={film.id}>
         <img
           src={
-            film.primaryImage
+            film.primaryImage && film.primaryImage.url
               ? film.primaryImage.url
-              : "https://picsum.photos/720"
+              : "https://picsum.photos/320/477/"
           }
           onClick={openModal}
+          onError={(e) => {
+            e.target.src = "https://picsum.photos/320/477";
+          }}
           alt="poster"
         />
         <div className="card-body">
@@ -61,12 +64,11 @@ export const CardFilm = ({ film, onLikeClick, isLiked }) => {
         <div className="modal">
           <div className="modal-content">
             <img
-              src={
-                film.primaryImage
-                  ? film.primaryImage.url
-                  : "https://picsum.photos/720"
-              }
+              src={film.primaryImage && film.primaryImage.url}
               alt="poster"
+              onError={(e) => {
+                e.target.src = "https://picsum.photos/320/477";
+              }}
             />
             <div className="modal-body">
               <h3>{film.title}</h3>
