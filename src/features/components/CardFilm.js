@@ -45,9 +45,6 @@ export const CardFilm = ({ film, onLikeClick, isLiked }) => {
               : "https://picsum.photos/320/477/"
           }
           onClick={openModal}
-          onError={(e) => {
-            e.target.src = "https://picsum.photos/320/477";
-          }}
           alt="poster"
         />
         <div className="card-body">
@@ -66,9 +63,6 @@ export const CardFilm = ({ film, onLikeClick, isLiked }) => {
             <img
               src={film.primaryImage && film.primaryImage.url}
               alt="poster"
-              onError={(e) => {
-                e.target.src = "https://picsum.photos/320/477";
-              }}
             />
             <div className="modal-body">
               <h3>{film.title}</h3>
