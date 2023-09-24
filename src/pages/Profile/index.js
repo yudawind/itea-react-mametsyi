@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Video } from "../../features/films/Video";
-import { Layout } from "../../layouts/Layout";
 
 const ProfileCard = styled.header`
   img {
@@ -14,7 +13,7 @@ const ProfileCard = styled.header`
 
 export const Profile = () => {
   return (
-    <Layout>
+    <>
       <h1>Profile</h1>
 
       <ProfileCard>
@@ -24,6 +23,6 @@ export const Profile = () => {
       </ProfileCard>
 
       <Video />
-    </Layout>
+    </>
   );
 };

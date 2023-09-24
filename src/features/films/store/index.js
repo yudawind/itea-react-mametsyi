@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  film: [
+  films: [
     {
       id: "tt9664206",
       primaryImage: {
@@ -24,24 +24,21 @@ const initialState = {
       },
     },
   ],
+  filmIds: [],
   fetching: false,
   message: null,
 };
 
-const videoSlice = createSlice({
-  name: "film",
+const filmsSlice = createSlice({
+  name: "films",
   initialState,
   reducers: {
     setFetching(state) {
       state.fetching = true;
     },
     setCompleted(state, action) {
-      state.videos = action.payload;
+      state.films = action.payload;
       state.fetching = false;
-    },
-    setName(state) {
-      state.videos[0].titleType.plainText = "Itea";
-      state.videos[0].titleText.text = "Course";
     },
     setFailed(state, action) {
       state.message = action.payload;
@@ -50,10 +47,33 @@ const videoSlice = createSlice({
     reset(state) {
       state = initialState;
     },
+
+    getFilms(state, action) {
+      state.films = action.payload;
+      state.fetching = false;
+    },
+    getFilmId(state, action) {
+      state.filmIds = action.payload;
+      state.fetching = false;
+    },
+    setFilmId(state, action) {
+      state.filmIds = action.payload;
+      state.fetching = false;
+    },
+    setName(state) {
+      state.films[0].titleType.plainText = "Itea";
+      state.films[0].titleText.text = "Course";
+    },
   },
 });
 
-export const { setFetching, setCompleted, setName, setFailed, reset } =
-  videoSlice.actions;
+export const {
+  setFetching,
+  setCompleted,
+  setFailed,
+  reset,
+  getFilms,
+  setName,
+} = filmsSlice.actions;
 
-export default videoSlice.reducer;
+export default filmsSlice.reducer;

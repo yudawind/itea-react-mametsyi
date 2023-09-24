@@ -27,6 +27,7 @@ export const Header = () => {
     <StyledHeader>
       <Link to="/home">Home</Link>
       <Link to="/profile">Profile</Link>
+      <Link to="/search-title">Search Title</Link>
     </StyledHeader>
   );
 };
