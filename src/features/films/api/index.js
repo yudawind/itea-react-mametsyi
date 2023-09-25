@@ -5,7 +5,7 @@ const getVideos = async () => {
     method: "GET",
     url: "https://moviesdatabase.p.rapidapi.com/titles/random",
     params: {
-      limit: "6",
+      limit: "12",
       list: "most_pop_movies",
     },
     headers: {
@@ -41,5 +41,25 @@ const getVideo = async (id) => {
   }
 };
 
+const getVideoSearch = async (aka) => {
+  const options = {
+    method: "GET",
+    url: "https://moviesdatabase.p.rapidapi.com/titles/search/akas/" + aka,
+    params: { limit: "12" },
+    headers: {
+      "X-RapidAPI-Key": "5796693a59msh4cf352b95fe8c4ep13f1b0jsn429300ef5bae",
+      "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 export const apiVideo = { getVideo };
-export const apiVideos = { getVideos };
+export const apiVideos = { getVideos, getVideoSearch };
