@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { FilmsList } from "./FilmsList";
-import { Button } from "../../components/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { setName } from "./store";
 import { getFilmsSearch } from "./store/filmSearchActions";
 
 export const SearchFilms = () => {
@@ -25,11 +23,10 @@ export const SearchFilms = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
         />
         {fetching ? (
-          <p>Завантаження...</p>
+          <p>Пошук...</p>
         ) : (
-          <FilmsList films={films} category="Випадкове" />
+          <FilmsList films={films} category="Знайдене" />
         )}
-        <Button onClick={() => dispatch(setName())}>Змінити</Button>
       </div>
     </>
   );
