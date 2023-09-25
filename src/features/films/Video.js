@@ -44,7 +44,7 @@ export const Video = () => {
   }
 
   return (
-    <>
+    <div className="row row-wrap">
       {videos.map((film, index) => (
         <div key={film.id}>
           <CardFilm
@@ -54,6 +54,6 @@ export const Video = () => {
           />
         </div>
       ))}
-    </>
+    </div>
   );
 };
