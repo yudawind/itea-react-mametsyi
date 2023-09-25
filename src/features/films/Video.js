@@ -19,10 +19,10 @@ export const Video = () => {
   const getVideo = async (id) => {
     try {
       const { results } = await apiVideo.getVideo(id);
-      console.log(results);
+      // console.log(results);
       return results;
     } catch (e) {
-      console.log(e);
+      // console.log(e);
       return null;
     }
   };
