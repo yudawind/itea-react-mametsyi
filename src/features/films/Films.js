@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import { FilmsList } from "./containers/FilmsList";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,7 +10,7 @@ export const Films = () => {
 
   useEffect(() => {
     dispatch(getFilmsAction());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>

@@ -20,9 +20,9 @@ export const Profile = () => {
       <h1>Profile</h1>
 
       <ProfileCard>
-        <img src={user[0].img} alt="ava" />
-        <h2>{user[0].name}</h2>
-        <p>{user[0].description}</p>
+        <img src={user.img} alt="ava" />
+        <h2>{user.name}</h2>
+        <p>{user.description}</p>
       </ProfileCard>
 
       <SelectedFilms />

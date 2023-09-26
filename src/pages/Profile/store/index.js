@@ -1,14 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  user: [
-    {
-      id: "1",
-      img: "http://yuriy.itaw.org/ava/20230816_202538.jpg",
-      name: "Юрій Мамецький",
-      description: "Професійний ІТ-спеціаліст та програміст",
-    },
-  ],
+  user: {
+    id: "1",
+    img: "http://yuriy.itaw.org/ava/20230816_202538.jpg",
+    name: "Юрій Мамецький",
+    description: "Професійний ІТ-спеціаліст та програміст",
+  },
+
   fetching: false,
   message: null,
 };
