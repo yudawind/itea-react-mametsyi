@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Video } from "../../features/films/Video";
+import { SelectedFilms } from "../../features/films/SelectedFilms";
 import { useSelector } from "react-redux";
 
 const ProfileCard = styled.header`
@@ -25,7 +25,7 @@ export const Profile = () => {
         <p>{user[0].description}</p>
       </ProfileCard>
 
-      <Video />
+      <SelectedFilms />
     </>
   );
 };

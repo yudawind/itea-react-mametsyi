@@ -3,7 +3,7 @@ import { apiVideo } from "./api";
 import { useSelectedFilmIds } from "./components/SelectedFilmIdsProvider";
 import { CardFilm } from "../components/CardFilm";
 
-export const Video = () => {
+export const SelectedFilms = () => {
   const [videos, setVideos] = useState([]);
   const { selectedFilmIds, addSelectedFilmId, removeSelectedFilmId } =
     useSelectedFilmIds();

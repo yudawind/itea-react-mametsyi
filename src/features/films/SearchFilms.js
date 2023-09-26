@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FilmsList } from "./FilmsList";
+import { FilmsList } from "./containers/FilmsList";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilmsSearch } from "./store/filmSearchActions";
 

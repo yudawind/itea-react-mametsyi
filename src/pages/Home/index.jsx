@@ -1,11 +1,11 @@
-import { Videos } from "../../features/films/Videos";
+import { Films } from "../../features/films/Films";
 
 export const Home = () => {
   return (
     <>
       <h1>Home</h1>
       <div className="row">
-        <Videos />
+        <Films />
       </div>
     </>
   );

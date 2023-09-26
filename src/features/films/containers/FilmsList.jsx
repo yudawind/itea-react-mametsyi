@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { useSelectedFilmIds } from "./components/SelectedFilmIdsProvider";
-import { CardFilm } from "../components/CardFilm";
+import { useSelectedFilmIds } from "../components/SelectedFilmIdsProvider";
+import { CardFilm } from "../../components/CardFilm";
 
 const StyledH2 = styled.h2`
   color: #141414;
