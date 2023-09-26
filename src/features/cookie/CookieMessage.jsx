@@ -1,4 +1,4 @@
-import { Button } from "../../components/Button/Button";
+import { Button } from "../../components/Button";
 import useCookieConsent from "../../hooks/useCookieConsent";
 import styled from "styled-components";
 

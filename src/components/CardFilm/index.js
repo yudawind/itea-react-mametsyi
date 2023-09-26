@@ -1,4 +1,4 @@
-import { Button } from "../../components/Button/Button";
+import { Button } from "../Button";
 import "./index.scss";
 import React, { useEffect, useState } from "react";
 

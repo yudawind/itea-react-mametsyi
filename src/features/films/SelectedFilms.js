@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { apiVideo } from "./api";
 import { useSelectedFilmIds } from "./components/SelectedFilmIdsProvider";
-import { CardFilm } from "../components/CardFilm";
+import { CardFilm } from "../../components/CardFilm";
 
 export const SelectedFilms = () => {
   const [videos, setVideos] = useState([]);

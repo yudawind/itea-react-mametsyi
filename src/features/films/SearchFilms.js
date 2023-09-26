@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import { FilmsList } from "./containers/FilmsList";
+import { FilmsList } from "../../components/FilmsList";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilmsSearch } from "./store/filmSearchActions";
 
